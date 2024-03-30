@@ -1,0 +1,8 @@
+<%= form_for @list do |form| %>
+    <p><%= form.label:name %></p>
+    <p><%= form.text_field :name %></p>
+     <p><%= form.label:description %></p>
+    <p><%= form.text_area :description %></p>
+    <P><%= form.submit %></P>
+    <%= link_to'リスト一覧',lists_path %>
+<% end %>

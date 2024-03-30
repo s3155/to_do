@@ -1,0 +1,5 @@
+<h1>編集する</h1>
+<%= form_with(model: @list, local: true)do |form| %>
+    <p><%= form.text_field :name %></p>
+    <p><%= form.text_area :description  %></p>
+<% end %>
