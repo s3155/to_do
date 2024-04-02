@@ -14,6 +14,11 @@ Rails.application.routes.draw do
     get '/users/auth/google/callback', to: 'users/omniauth_callbacks#google_oauth2'
   end
 
+  resources :lists do
+    resources :items
+  end
+  root 'welcome#index'
+
   # Defines the root path route ("/")
   # root "posts#index"
   resources :lists

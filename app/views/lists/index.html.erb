@@ -1,8 +1,15 @@
-<h1>Lists一覧</h1>
-<% @lists.each do |list| %>
-    <p><%= link_to @lists.name,list_path(list) %></p>
-    <p><%= link_to '編集する',edit_list_path(list) %></p>
-    <p><%= link_to'削除する', list_path(list), method: :delete %></p>
-    <%= link_to'新規リスト作成',new_list_path %>
-
-<% end %>
+<div class="container">
+  <h1>Lists一覧</h1>
+  <div class="list-group">
+    <% @lists.each do |list| %>
+      <div class="list-group-item">
+        <h5 class="mb-1"><%= link_to list.name, list_path(list) %></h5>
+        <div class="btn-group" role="group" aria-label="List actions">
+          <%= link_to '編集する', edit_list_path(list), class: "btn btn-primary btn-sm mr-2" %>
+          <%= link_to '削除する', list_path(list), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to '新規リスト作成', new_list_path, class: "btn btn-success mt-3" %>
+</div>

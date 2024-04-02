@@ -1,2 +1,15 @@
+<%= link_to "<<TO DOリストへ戻る", lists_path %>
+<hr>
 <h2><%= @list.name %></h2>
-<p><%= @list.description %></P>
+<p><%= @list.description %></p>
+<hr>
+<% @list.items.each do |item| %>
+    <%= item.name %>
+<% end %>
+<hr>
+<hr>
+<h1>新規アイテム作成</h1>
+<%= form_for [@list, Item.new] do |f| %>
+  <%= f.text_field :name %> <!-- テキストフィールドの name 属性を指定 -->
+  <%= f.submit %>
+<% end %>

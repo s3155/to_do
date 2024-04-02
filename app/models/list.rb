@@ -1,2 +1,3 @@
 class List < ApplicationRecord
-end
+    has_many :items
+  end
