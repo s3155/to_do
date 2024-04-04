@@ -26,9 +26,11 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-gem 'devise'
-
-gem 'omniauth-google-oauth2'             # Google認証
+gem "devise", "~> 4.9"
+gem 'omniauth'
+gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
 
 gem 'dotenv-rails', groups: [:development, :test]
 

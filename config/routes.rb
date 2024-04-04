@@ -9,17 +9,18 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
+  
+
   # Google OAuth2 callback route
   devise_scope :user do
     get '/users/auth/google/callback', to: 'users/omniauth_callbacks#google_oauth2'
   end
 
+  # Define nested resources for items within lists
   resources :lists do
     resources :items
   end
-  root 'welcome#index'
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :lists
 end
