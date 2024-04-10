@@ -10,12 +10,12 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
 
-  root to: 'users/omniauth_callbacks#google_oauth2'
+  root to: 'lists#index'
 
 
   # Google OAuth2 callback route
   devise_scope :user do
-    get '/users/auth/google/callback', to: 'users/omniauth_callbacks#google_oauth2'
+    get "/" => "devise/sessions#new"
   end
 
   # Define nested resources for items within lists
