@@ -31,8 +31,8 @@ gem 'omniauth'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
-
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'omniauth-line'
+gem 'dotenv-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
