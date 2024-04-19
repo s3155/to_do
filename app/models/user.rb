@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   validates :uid, uniqueness: { scope: :provider }
 
+  
+
   def self.from_omniauth(auth)
     authorization = Authorization.find_or_initialize_by(provider: auth.provider, uid: auth.uid)
     authorization.assign_attributes(name: auth.info.name, email: auth.info.email)

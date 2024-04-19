@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   }
   
 
-  get 'homes/index'
+  root 'homes#index'
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   end
 
   # GitHub認証のコールバックURLに対するルートを追加
-  devise_scope :user do
-    get '/auth/github/callback', to: 'users/omniauth_callbacks#github'
-    post '/auth/github', to: 'users/omniauth_callbacks#github'
-  end
+   #  devise_scope :user do
+  #     get '/auth/github/callback', to: 'users/omniauth_callbacks#github'
+  #     post '/auth/github', to: 'users/omniauth_callbacks#github'
+   #  end
 end

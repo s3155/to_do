@@ -26,8 +26,8 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-gem "devise", "~> 4.9"
-gem 'omniauth'
+gem 'devise'
+gem 'omniauth', '~> 1.9.1'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
@@ -45,7 +45,7 @@ gem 'dotenv-rails'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
-
+gem 'uuid', '~> 2.3'
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
@@ -67,7 +67,7 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-
+gem 'bootstrap-sass'
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"

@@ -13,3 +13,99 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+.container {
+  margin-top: 20px;
+  text-align: center; /* コンテンツを中央に配置する */
+}
+
+.list-group {
+  margin-top: 20px;
+  display: inline-block; /* 横並びにする */
+}
+
+.list-group-item {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: left; /* テキストを左揃えにする */
+}
+
+.list-group-item h5 {
+  margin-bottom: 10px;
+  text-align: center; /* h5要素を中央に配置する */
+}
+
+.btn-group {
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+}

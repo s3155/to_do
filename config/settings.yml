@@ -1,0 +1,4 @@
+production: &production
+  line:
+    key: 2004675701
+    secret: c40b304dece3ac8b10d566b7fc0375bc
