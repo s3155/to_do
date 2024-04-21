@@ -1,15 +1,18 @@
 # ApplicationController を Devise::OmniauthCallbacksController に変更
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # 以下を追加
-  def line; basic_action end
+  def line
+    basic_action
+  end
 
   private
+
   def basic_action
     @omniauth = request.env["omniauth.auth"]
     if @omniauth.present?
       @profile = User.find_or_initialize_by(provider: @omniauth["provider"], uid: @omniauth["uid"])
       if @profile.email.blank?
-        email = @omniauth["info"]["email"] ? @omniauth["info"]["email"] : "#{@omniauth["uid"]}-#{@omniauth["provider"]}@example.com"
+        email = @omniauth["info"]["email"] ? @omniauth["info"]["email"] : fake_email(@omniauth["uid"], @omniauth["provider"])
         @profile = current_user || User.create!(provider: @omniauth["provider"], uid: @omniauth["uid"], email: email, name: @omniauth["info"]["name"], password: Devise.friendly_token[0, 20])
       end
       @profile.set_values(@omniauth)
@@ -20,7 +23,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def fake_email(uid, provider)
-    "#{auth.uid}-#{auth.provider}@example.com"
+    "#{uid}-#{provider}@example.com"
   end
   # 以上を追加
 end
