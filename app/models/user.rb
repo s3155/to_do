@@ -3,11 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: %i[line] # この1行を追加
+         :omniauthable, omniauth_providers: %i[line]
 
   validates :uid, uniqueness: { scope: :provider }
-
-  
 
   def self.from_omniauth(auth)
     authorization = Authorization.find_or_initialize_by(provider: auth.provider, uid: auth.uid)
@@ -19,7 +17,7 @@ class User < ApplicationRecord
       user.save!
       user.authorizations << authorization unless user.authorizations.exists?(provider: auth.provider, uid: auth.uid)
     end
-end
+  end
 
   has_many :authorizations, dependent: :destroy
 
@@ -43,10 +41,6 @@ end
     self.raw_info = raw_info.to_json
     self.save!
   end
-
-
-
-
 
   def self.create_unique_string
     SecureRandom.uuid
