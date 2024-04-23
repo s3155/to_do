@@ -26,7 +26,7 @@ class ListsController < ApplicationController
 
   def update
     if @list.update(list_params)
-      redirect_to lists_path
+      redirect_to lists_path, notice: 'リストが更新されました'
     else
       render 'edit'
     end
@@ -34,7 +34,7 @@ class ListsController < ApplicationController
 
   def destroy
     @list.destroy
-    redirect_to lists_path
+    redirect_to lists_path, notice: 'リストが削除されました'
   end
 
   private

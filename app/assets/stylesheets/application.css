@@ -102,10 +102,23 @@ p {
 .btn-primary {
   background-color: #007bff;
   border-color: #007bff;
+  outline: 1px solid black;
 }
 
 .btn-danger {
   background-color: #dc3545;
   border-color: #dc3545;
   color: #fff;
+  outline: 1px solid black;
+}
+.btn.btn-yellow {
+  background-color: yellow;
+  border-color: yellow;
+  color: black;
+  outline: 1px solid black; /* ふちを追加 */
+}
+
+.text-center {
+  margin: 0 auto; /* 水平方向の中央配置 */
+  text-align: center; /* テキストの中央配置 */
 }

@@ -1,6 +1,8 @@
-<h1>編集する</h1>
-<%= form_with(model: @list, local: true) do |form| %>
-  <p><%= form.text_field :name %></p>
-  <p><%= form.text_area :description %></p>
-  <p><%= form.submit "保存" %></p>
-<% end %>
+<div class="container text-center">
+  <h1>編集する</h1>
+  <%= form_with(model: @list, local: true) do |form| %>
+    <p><%= form.text_field :name, class: "text-center" %></p>
+
+    <p><%= form.submit "保存", class: "text-center" %></p>
+  <% end %>
+</div>
