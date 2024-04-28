@@ -34,8 +34,9 @@ class ListsController < ApplicationController
 
   def destroy
     @list.destroy
-    redirect_to lists_path, notice: 'リストが削除されました'
+    redirect_to lists_path, status: :see_other, notice: 'リストが削除されました'
   end
+  
 
   private
 

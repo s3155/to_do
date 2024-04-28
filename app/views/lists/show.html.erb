@@ -1,23 +1,24 @@
-<%= link_to "<<TO DOリストへ戻る", lists_path %>
+<%= link_to "<<ToDoへ戻る", lists_path %>
 <hr>
 <div class="container text-center">
   <h2><%= @list.name %></h2>
- 
+
   <hr>
   <% @list.items.each_with_index do |item, index| %>
-    <div style="line-height: 3;"> <!-- 行の高さを2倍に変更 -->
+    <div style="line-height: 3;">
       <%= "#{index + 1}. #{item.name}" %>
-      <%= link_to "編集", edit_list_item_path(@list, item), class: "btn btn-primary btn-sm mx-1" %>
-       <%= link_to "削除", list_item_path(@list, item), method: :delete, data: { confirm: "削除してもよろしいですか？" }, class: "btn btn-danger btn-sm mx-1" %>
-   
+      <div class="d-flex justify-content-between">
+        <%= link_to "編集", edit_list_item_path(@list, item), class: "btn btn-primary btn-sm" %>
+        <%= form_tag list_item_path(@list, item), method: :delete, data: { turbo_method: :delete, turbo_confirm: "このアイテムを削除してもよろしいですか？" } do %>
+          <%= submit_tag "削除", class: "btn btn-danger btn-sm" %>
+        <% end %>
+      </div>
     </div>
   <% end %>
   <hr>
   <hr>
-  <h1>アイテム追加</h1>
+  <h1>ToDo追加</h1>
   <%= form_for [@list, Item.new], html: { class: "text-center" } do |f| %>
-    <%= f.text_field :name %> <!-- テキストフィールドの name 属性を指定 -->
-    <%= f.submit "追加", class: "btn btn-success btn-sm mx-1" %>
-    <br> <!-- ボタンを押すたびに改行 -->
-  <% end %>
+    <%= f.text_field :name %> <%= f.submit "追加", class: "btn btn-success btn-sm mx-1" %>
+    <br> <% end %>
 </div>

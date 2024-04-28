@@ -28,11 +28,14 @@ class ItemsController < ApplicationController
   end
   
   def destroy
-    @item = Item.find(params[:id]) # 削除するアイテムを特定します
-    @list = @item.list # アイテムが所属するリストを取得します
-    @item.destroy # アイテムを削除します
-    redirect_to list_path(@list), notice: 'アイテムが削除されました' # リストの詳細ページにリダイレクトして、ユーザーに通知を表示します
+    @item = Item.find(params[:id])
+    @list = @item.list
+    @item.destroy
+  
+    # Redirect to the list's details page with a 303 See Other status code
+    redirect_to list_path(@list), status: :see_other, notice: 'アイテムが削除されました'
   end
+  
   
   
 
