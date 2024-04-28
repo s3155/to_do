@@ -3,7 +3,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def line
     basic_action
   end
-
+  
   private
 
   # 基本的なアクションを定義
