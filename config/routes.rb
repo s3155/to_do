@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     resources :items
   end
 
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
   resources :items, only: [:create, :new, :index, :show, :edit, :update, :destroy]
 
   # GitHub認証のコールバックURLに対するルートを追加

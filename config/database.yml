@@ -24,4 +24,4 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['postgres://lyukkdzaoulrpf:f7725f546247cd76d800809d0ca688db359c1d59485dcf7cea90584f594b70db@ec2-52-72-109-141.compute-1.amazonaws.com:5432/dd61lqicgqrs44'] %>
