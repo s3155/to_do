@@ -17,7 +17,7 @@
   <% end %>
   <hr>
   <hr>
-  <h1>ToDo追加</h1>
+  <h1>詳細追加</h1>
   <%= form_for [@list, Item.new], html: { class: "text-center" } do |f| %>
     <%= f.text_field :name %> <%= f.submit "追加", class: "btn btn-success btn-sm mx-1" %>
     <br> <% end %>

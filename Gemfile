@@ -10,6 +10,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem 'devise'
+gem "sassc-rails"
 gem 'omniauth', '~> 1.9.1'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-github'
