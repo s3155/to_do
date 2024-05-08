@@ -10,7 +10,6 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem 'devise'
-gem "sassc-rails"
 gem 'omniauth', '~> 1.9.1'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-github'
@@ -19,7 +18,7 @@ gem 'omniauth-line'
 gem 'dotenv-rails'
 gem 'uuid', '~> 2.3'
 gem "bootsnap", require: false
-gem 'bootstrap' # Updated gem name
+gem 'bootstrap-sass'
 gem 'sqlite3', '~> 1.4'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -32,4 +31,5 @@ end
 
 group :production do
   gem 'pg', '~> 1.1'
+
 end
