@@ -19,7 +19,7 @@ gem 'omniauth-line'
 gem 'dotenv-rails'
 gem 'uuid', '~> 2.3'
 gem "bootsnap", require: false
-gem 'bootstrap-sass'
+gem 'bootstrap' # Updated gem name
 gem 'sqlite3', '~> 1.4'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -32,5 +32,4 @@ end
 
 group :production do
   gem 'pg', '~> 1.1'
-
 end
